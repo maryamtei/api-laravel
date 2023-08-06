@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\userController;
 use App\Http\Controllers\contactController;
 use Illuminate\Support\Facades\Route;
 use PhpParser\Node\Stmt\Foreach_;
@@ -20,3 +21,4 @@ Route::get('/', function () {
 });
 
 Route::post('/contact', [\App\Http\Controllers\contactController::class, 'Contact']);
+Route::post('/signup', [\App\Http\Controllers\userController::class, 'signup']);

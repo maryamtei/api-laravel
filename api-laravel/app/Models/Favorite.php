@@ -7,5 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Favorite extends Model
 {
+    protected $table = 'favorite';
+    protected $fillable = ['idDbMeal', 'user_id', 'name','image','position'];
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id')
+                    ->as('user');
+    }
     use HasFactory;
 }
